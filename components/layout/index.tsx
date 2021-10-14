@@ -3,6 +3,7 @@ import { VStack, Container, Box } from "@chakra-ui/react";
 
 import Header from "./Navbar";
 import Footer from "./Footer";
+import ToTop from "./ToTop";
 
 type Props = PropsWithChildren<{}>;
 
@@ -11,7 +12,7 @@ const Layout = ({ children }: Props) => {
 		<Container
 			display="flex"
 			maxW="container.md"
-			minH={{ base: "auto", md: "100vh" }}
+			minH="100vh"
 			px={{ base: 4, md: 0 }}
 			centerContent
 		>
@@ -24,6 +25,7 @@ const Layout = ({ children }: Props) => {
 				</Box>
 				<Footer />
 			</VStack>
+			<ToTop />
 		</Container>
 	);
 };

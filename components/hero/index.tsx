@@ -18,6 +18,7 @@ const Hero = () => {
 			spacing={12}
 			w="full"
 			direction={{ base: "column-reverse", md: "row" }}
+			className="fadeinUp"
 		>
 			<VStack spacing={3} alignItems="flex" w="full">
 				<Stack

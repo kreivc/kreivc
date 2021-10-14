@@ -3,3 +3,14 @@
 * {
 	box-sizing: border-box;
 }
+
+html::-webkit-scrollbar {
+	display: none;
+}
+
+/* --- animate.css --- */
+
+.fadeinUp {
+	animation: fadeInUp;
+	animation-duration: 0.5s;
+}

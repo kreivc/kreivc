@@ -4,6 +4,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import theme from "../styles/theme";
 import Layout from "../components/layout";
 import "../styles/globals.css";
+import "animate.css";
 
 const App = ({ Component, pageProps }: AppProps) => {
 	return (

@@ -43,7 +43,7 @@ const CloudinaryImg = ({
 			bgRepeat="no-repeat"
 			bgSize="100%"
 			cursor="pointer"
-			rounded={rounded ? "full" : "none"}
+			rounded={rounded ? "full" : "md"}
 		>
 			<Box pos="absolute" top={0} left={0}>
 				<Image
@@ -53,7 +53,6 @@ const CloudinaryImg = ({
 					alt="Project Image"
 					unoptimized={true}
 					objectFit="cover"
-					// objectPosition={"100% 100%"}
 				/>
 			</Box>
 		</Box>

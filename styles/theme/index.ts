@@ -29,20 +29,6 @@ const theme = extendTheme({
 		heading: `Poppins, ${base.fonts.heading}`,
 		body: `Inter, ${base.fonts.body}`,
 	},
-	mdx: {
-		h1: {
-			fontSize: "3xl",
-		},
-		h2: {
-			fontSize: "xl",
-		},
-		h3: {
-			fontSize: "md",
-		},
-		h4: {
-			fontSize: "xs",
-		},
-	},
 });
 
 export default theme;

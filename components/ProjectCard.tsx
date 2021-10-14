@@ -1,4 +1,14 @@
-import { Box, Text } from "@chakra-ui/react";
+import {
+	LinkBox,
+	VStack,
+	AspectRatio,
+	LinkOverlay,
+	Heading,
+	Text,
+	Flex,
+	Button,
+	Badge,
+} from "@chakra-ui/react";
 import CloudinaryImg from "./CloudinaryImg";
 
 type ProjectCardProps = {
@@ -7,6 +17,7 @@ type ProjectCardProps = {
 	description: string;
 	link: string;
 	rounded: boolean;
+	finish: boolean;
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -15,22 +26,43 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 	description,
 	link,
 	rounded,
+	finish,
 }) => {
-	const width = 3840;
-	const height = 2160;
+	const width = 1920;
+	const height = 1080;
 
 	return (
-		<Box>
-			<CloudinaryImg
-				publicId={image}
-				width={width}
-				height={height}
-				rounded={rounded}
-			/>
-			<Text>{title}</Text>
-			<Text>{description}</Text>
-			<Text>{link}</Text>
-		</Box>
+		<LinkBox p="5" rounded="md" boxShadow="lg">
+			<VStack spacing={4} alignItems="flex-start">
+				<AspectRatio ratio={16 / 9} w="full">
+					<CloudinaryImg
+						publicId={image}
+						width={width}
+						height={height}
+						rounded={rounded}
+					/>
+				</AspectRatio>
+				<VStack spacing={2} alignItems="flex-start">
+					<LinkOverlay href={link} target="_blank" d="flex" gridGap={2}>
+						<Heading size="sm">{title}</Heading>
+						<Badge
+							rounded="full"
+							px="2"
+							colorScheme={finish ? "teal" : "orange"}
+						>
+							{finish ? "Finish" : "Ongoing"}
+						</Badge>
+					</LinkOverlay>
+					<Text fontSize="sm" color="gray.500" noOfLines={[1, 4]}>
+						{description}
+					</Text>
+					<Flex w="full" gridGap={3}>
+						<Button flex={1}>View More</Button>
+						<Button flex={1}>Open</Button>
+					</Flex>
+				</VStack>
+			</VStack>
+		</LinkBox>
 	);
 };
 

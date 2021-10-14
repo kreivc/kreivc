@@ -1,9 +1,13 @@
 import { Box, Heading } from "@chakra-ui/react";
+import Head from "next/head";
 
 const Blog = () => {
 	return (
 		<Box>
-			<Heading>Comming Soon</Heading>
+			<Head>
+				<title>Blog</title>
+			</Head>
+			<Heading className="fadeinUp">Comming Soon</Heading>
 		</Box>
 	);
 };

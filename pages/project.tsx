@@ -1,6 +1,6 @@
 import { GridItem, Heading, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 import ProjectCard from "../components/ProjectCard";
-import Head from "next/head";
+import Seo from "../components/Seo";
 
 type pData = {
 	id: number;
@@ -16,9 +16,7 @@ const { ProjectList } = require("../data/project");
 const Project = () => {
 	return (
 		<>
-			<Head>
-				<title>Project</title>
-			</Head>
+			<Seo title="Project" />
 			<VStack w="full" alignItems="flex-start" spacing={4}>
 				<Heading>My Projects</Heading>
 				<Text>Some projects that I have made.</Text>

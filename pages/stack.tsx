@@ -1,12 +1,10 @@
 import { Box, Heading } from "@chakra-ui/react";
-import Head from "next/head";
+import Seo from "../components/Seo";
 
 const Stack = () => {
 	return (
 		<Box>
-			<Head>
-				<title>Stack</title>
-			</Head>
+			<Seo title="Stack" />
 			<Heading className="fadeinUp">Comming Soon</Heading>
 		</Box>
 	);

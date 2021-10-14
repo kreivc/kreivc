@@ -1,4 +1,9 @@
-import { extendTheme, theme as base } from "@chakra-ui/react";
+import {
+	extendTheme,
+	theme as base,
+	HeadingProps,
+	TextProps,
+} from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
 
 const theme = extendTheme({
@@ -7,12 +12,12 @@ const theme = extendTheme({
 	},
 	components: {
 		Heading: {
-			baseStyle: (props: any) => ({
+			baseStyle: (props: HeadingProps) => ({
 				color: mode("gray.700", "white")(props),
 			}),
 		},
 		Text: {
-			baseStyle: (props: any) => ({
+			baseStyle: (props: TextProps) => ({
 				color: mode("gray.700", "white")(props),
 			}),
 		},

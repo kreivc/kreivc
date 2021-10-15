@@ -1,4 +1,5 @@
 import Hero from "../components/hero";
+import FavStack from "../components/hero/FavStack";
 import Seo from "../components/Seo";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
 		<>
 			<Seo title="Kreivc" />
 			<Hero />
+			<FavStack />
 		</>
 	);
 }

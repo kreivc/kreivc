@@ -8,6 +8,7 @@ import {
 	Link,
 } from "@chakra-ui/react";
 import { FiArrowUpRight } from "react-icons/fi";
+import FavStack from "./FavStack";
 import HeroImage from "./HeroImage";
 import HeroPlay from "./HeroPlay";
 

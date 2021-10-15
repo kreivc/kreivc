@@ -6,7 +6,7 @@ type CloudinaryImgProps = {
 	publicId: string;
 	height: number;
 	width: number;
-	rounded: boolean;
+	rounded: string;
 };
 
 const CloudinaryImg = ({
@@ -43,7 +43,7 @@ const CloudinaryImg = ({
 			bgRepeat="no-repeat"
 			bgSize="100%"
 			cursor="pointer"
-			rounded={rounded ? "full" : "md"}
+			rounded={rounded}
 		>
 			<Box pos="absolute" top={0} left={0}>
 				<Image

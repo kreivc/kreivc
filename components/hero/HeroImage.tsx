@@ -11,7 +11,7 @@ const HeroImage = () => {
 				publicId="kreivc/ik1lbhvsjdvnyegylphj"
 				height={3448}
 				width={3448}
-				rounded={true}
+				rounded={"full"}
 			/>
 		</AspectRatio>
 	);

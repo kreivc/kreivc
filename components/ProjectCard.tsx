@@ -16,7 +16,7 @@ type ProjectCardProps = {
 	image: string;
 	description: string;
 	link: string;
-	rounded: boolean;
+	rounded: string;
 	finish: boolean;
 };
 

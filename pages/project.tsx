@@ -1,6 +1,7 @@
 import { GridItem, Heading, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 import ProjectCard from "../components/ProjectCard";
 import Seo from "../components/Seo";
+import { ProjectList } from "../data/project";
 
 type pData = {
 	id: number;
@@ -10,8 +11,6 @@ type pData = {
 	link: string;
 	finish: boolean;
 };
-
-const { ProjectList } = require("../data/project");
 
 const Project = () => {
 	return (
@@ -35,7 +34,7 @@ const Project = () => {
 									image={image}
 									description={description}
 									link={link}
-									rounded={false}
+									rounded={"md"}
 									finish={finish}
 								/>
 							</GridItem>

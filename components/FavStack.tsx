@@ -10,7 +10,7 @@ import {
 	Button,
 	Link,
 } from "@chakra-ui/react";
-import { currentTechStack } from "../../data/currentTechStack";
+import { currentTechStack } from "../data/currentTechStack";
 import { IconType } from "react-icons";
 import NextLink from "next/link";
 import { IoArrowDownOutline } from "react-icons/io5";

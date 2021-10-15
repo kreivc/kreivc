@@ -5,7 +5,7 @@ const Blog = () => {
 	return (
 		<Box>
 			<Seo title="Blog" />
-			<Heading className="fadeinUp">Comming Soon</Heading>
+			<Heading className="fadeinDownInfinite">Comming Soon</Heading>
 		</Box>
 	);
 };

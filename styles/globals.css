@@ -24,3 +24,8 @@ html::-webkit-scrollbar {
 	animation: fadeInDown infinite;
 	animation-duration: 2s;
 }
+
+.pulse {
+	animation: pulse;
+	animation-duration: 1s;
+}

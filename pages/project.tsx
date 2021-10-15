@@ -1,4 +1,11 @@
-import { GridItem, Heading, SimpleGrid, Text, VStack } from "@chakra-ui/react";
+import {
+	Box,
+	GridItem,
+	Heading,
+	SimpleGrid,
+	Text,
+	VStack,
+} from "@chakra-ui/react";
 import ProjectCard from "../components/ProjectCard";
 import Seo from "../components/Seo";
 import { ProjectList } from "../data/project";
@@ -17,8 +24,10 @@ const Project = () => {
 		<>
 			<Seo title="Project" />
 			<VStack w="full" alignItems="flex-start" spacing={4}>
-				<Heading>My Projects</Heading>
-				<Text>Some projects that I have made.</Text>
+				<Box className="pulse">
+					<Heading>My Projects</Heading>
+					<Text>Some projects that I have made.</Text>
+				</Box>
 				<SimpleGrid
 					columns={{ base: 1, md: 2 }}
 					spacing={6}
@@ -28,7 +37,7 @@ const Project = () => {
 				>
 					{ProjectList.map(
 						({ id, title, image, description, link, finish }: pData) => (
-							<GridItem key={id}>
+							<GridItem key={id} className="fadeinUp">
 								<ProjectCard
 									title={title}
 									image={image}

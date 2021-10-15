@@ -1,13 +1,18 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useEffect } from "react";
 import { VStack, Container, Box } from "@chakra-ui/react";
 
 import Header from "./Navbar";
 import Footer from "./Footer";
 import ToTop from "./ToTop";
+import Hello from "../../utils/Hello";
 
 type Props = PropsWithChildren<{}>;
 
 const Layout = ({ children }: Props) => {
+	useEffect(() => {
+		Hello();
+	}, []);
+
 	return (
 		<Container
 			display="flex"

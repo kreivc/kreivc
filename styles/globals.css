@@ -14,3 +14,13 @@ html::-webkit-scrollbar {
 	animation: fadeInUp;
 	animation-duration: 0.5s;
 }
+
+.fadeinDown {
+	animation: fadeInDown;
+	animation-duration: 0.5s;
+}
+
+.fadeinDownInfinite {
+	animation: fadeInDown infinite;
+	animation-duration: 2s;
+}

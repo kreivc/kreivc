@@ -55,7 +55,7 @@ const FavStack = () => {
 					</Wrap>
 				</Flex>
 				<NextLink href="/stack" passHref>
-					<Button as={Link}>See More</Button>
+					<Button as={Link}>See More..</Button>
 				</NextLink>
 			</Stack>
 			<Button

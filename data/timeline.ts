@@ -32,6 +32,6 @@ export const MyTimeline = [
 		title: "To be continued..",
 		description:
 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis dicta possimus dolore vero iusto, quaerat doloribus accusantium error ut asperiores quo in cum exercitationem sapiente.",
-		date: "present",
+		date: "",
 	},
 ];

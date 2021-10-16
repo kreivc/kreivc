@@ -58,7 +58,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 					</Text>
 					<Flex w="full" gridGap={3}>
 						<Button flex={1}>View More</Button>
-						<Button flex={1}>Open</Button>
+						<Button flex={1} as="a" href={link} target="_blank">
+							Open
+						</Button>
 					</Flex>
 				</VStack>
 			</VStack>

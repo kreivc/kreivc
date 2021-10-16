@@ -1,10 +1,20 @@
 import Head from "next/head";
+import { useEffect, useState } from "react";
+import { useColorMode } from "@chakra-ui/react";
 
 type SeoProps = {
 	title: string;
 };
 
 const Seo = ({ title }: SeoProps) => {
+	const [dark, setDark] = useState(false);
+	const { colorMode } = useColorMode();
+
+	useEffect(() => {
+		if (colorMode === "dark") setDark(true);
+		else if (colorMode === "light") setDark(false);
+		else setDark(false);
+	}, [colorMode]);
 	return (
 		<Head>
 			<meta charSet="utf-8" />
@@ -46,24 +56,45 @@ const Seo = ({ title }: SeoProps) => {
 			<link
 				rel="apple-touch-icon"
 				sizes="180x180"
-				href="/favicon/apple-touch-icon.png"
+				href={
+					dark
+						? "/favicon/apple-touch-icon.png"
+						: "/favicon/white/apple-touch-icon.png"
+				}
 			/>
 			<link
 				rel="icon"
 				type="image/png"
 				sizes="32x32"
-				href="/favicon/favicon-32x32.png"
+				href={
+					dark
+						? "/favicon/favicon-32x32.png"
+						: "/favicon/white/favicon-32x32.png"
+				}
 			/>
 			<link
 				rel="icon"
 				type="image/png"
 				sizes="16x16"
-				href="/favicon/favicon-16x16.png"
+				href={
+					dark
+						? "/favicon/favicon-16x16.png"
+						: "/favicon/white/favicon-16x16.png"
+				}
 			/>
-			<link rel="manifest" href="/favicon/site.webmanifest" />
+			<link
+				rel="manifest"
+				href={
+					dark ? "/favicon/site.webmanifest" : "/favicon/white/site.webmanifest"
+				}
+			/>
 			<link
 				rel="mask-icon"
-				href="/favicon/safari-pinned-tab.svg"
+				href={
+					dark
+						? "/favicon/safari-pinned-tab.svg"
+						: "/favicon/white/safari-pinned-tab.svg"
+				}
 				color="#5bbad5"
 			/>
 			<meta name="msapplication-TileColor" content="#da532c" />

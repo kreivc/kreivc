@@ -10,7 +10,7 @@ import {
 	Button,
 	Link,
 } from "@chakra-ui/react";
-import { currentTechStack } from "../data/currentTechStack";
+import { CurrentTechStack } from "../data/stack";
 import { IconType } from "react-icons";
 import NextLink from "next/link";
 import { IoArrowDownOutline } from "react-icons/io5";
@@ -30,8 +30,6 @@ const FavStack = () => {
 				w="full"
 				direction="column"
 				justifyContent="center"
-				// alignItems="flex-start"
-				// alignItems="flex-end"
 				alignItems="center"
 				className="fadeinDown"
 				pt={{ base: "0", md: "7" }}
@@ -39,7 +37,7 @@ const FavStack = () => {
 				<Heading size="lg">Current Favorite Tech Stack</Heading>
 				<Flex>
 					<Wrap spacing={4}>
-						{currentTechStack.map(
+						{CurrentTechStack.map(
 							({ id, tip, logo, bg }: FavTechStackProps) => (
 								<WrapItem key={id}>
 									<Tooltip label={tip} hasArrow>

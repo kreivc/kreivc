@@ -6,7 +6,7 @@ import {
 	SiVercel,
 } from "react-icons/si";
 
-export const currentTechStack = [
+export const CurrentTechStack = [
 	{
 		id: 1,
 		tip: "Next.js",

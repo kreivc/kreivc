@@ -22,16 +22,6 @@ const Header = () => {
 		toggleColorMode();
 	};
 
-	const stop = () => {
-		controls.pause();
-		controls.seek(0);
-		toggleColorMode();
-	};
-
-	const changeColorMode = () => {
-		state.playing ? stop() : play();
-	};
-
 	return (
 		<HStack as="nav" justifyContent="space-between" alignItems="center" py={3}>
 			{audio}
@@ -61,8 +51,7 @@ const Header = () => {
 					icon={colorMode === "light" ? <IoMoon /> : <IoSunny />}
 					variant="ghost"
 					size="sm"
-					// onClick={toggleColorMode}
-					onClick={changeColorMode}
+					onClick={play}
 				/>
 			</HStack>
 		</HStack>

@@ -24,7 +24,7 @@ const Project = () => {
 		<>
 			<Seo title="Project" />
 			<VStack w="full" alignItems="flex-start" spacing={4}>
-				<Box className="pulse">
+				<Box className="fadeinUp">
 					<Heading>My Projects</Heading>
 					<Text>Some projects that I have made.</Text>
 				</Box>

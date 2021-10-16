@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 }
 
-html::-webkit-scrollbar {
+*::-webkit-scrollbar {
 	display: none;
 }
 
@@ -25,7 +25,35 @@ html::-webkit-scrollbar {
 	animation-duration: 2s;
 }
 
-.pulse {
-	animation: pulse;
+.fadeIn1 {
+	animation: fadeIn;
+	animation-duration: 0.5s;
+}
+.fadeIn2 {
+	animation: fadeIn;
+	animation-duration: 0.75s;
+}
+.fadeIn3 {
+	animation: fadeIn;
 	animation-duration: 1s;
+}
+.fadeIn4 {
+	animation: fadeIn;
+	animation-duration: 1.25s;
+}
+.fadeIn5 {
+	animation: fadeIn;
+	animation-duration: 1.5s;
+}
+.fadeIn6 {
+	animation: fadeIn;
+	animation-duration: 1.75s;
+}
+.fadeIn7 {
+	animation: fadeIn;
+	animation-duration: 2s;
+}
+.fadeIn8 {
+	animation: fadeIn;
+	animation-duration: 2.5s;
 }

@@ -8,8 +8,11 @@ import {
 	Flex,
 	Button,
 	Badge,
+	useDisclosure,
 } from "@chakra-ui/react";
+import { useRef } from "react";
 import CloudinaryImg from "./CloudinaryImg";
+import ProjectModal from "./ProjectModal";
 
 type ProjectCardProps = {
 	title: string;
@@ -30,6 +33,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
 	const width = 1920;
 	const height = 1080;
+	const { isOpen, onOpen, onClose } = useDisclosure();
+	const btnRef = useRef();
 
 	return (
 		<LinkBox p="5" rounded="md" boxShadow="lg">
@@ -57,12 +62,25 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 						{description}
 					</Text>
 					<Flex w="full" gridGap={3}>
-						<Button flex={1}>View More</Button>
+						<Button flex={1} ref={btnRef} onClick={onOpen}>
+							View More
+						</Button>
 						<Button flex={1} as="a" href={link} target="_blank">
 							Open
 						</Button>
 					</Flex>
 				</VStack>
+				<ProjectModal
+					btnRef={btnRef}
+					onClose={onClose}
+					isOpen={isOpen}
+					title={title}
+					image={image}
+					description={description}
+					link={link}
+					rounded={rounded}
+					finish={finish}
+				/>
 			</VStack>
 		</LinkBox>
 	);

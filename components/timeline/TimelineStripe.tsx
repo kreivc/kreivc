@@ -1,5 +1,5 @@
 import { Text, VStack, ListItem, ListIcon, HStack } from "@chakra-ui/react";
-import { MdCheckCircle } from "react-icons/md";
+import { FaDotCircle } from "react-icons/fa";
 
 type TimelineProps = {
 	title: string;
@@ -15,7 +15,7 @@ const TimelineStripe: React.FC<TimelineProps> = ({
 	return (
 		<ListItem>
 			<HStack d={date != "" ? "flex" : "none"}>
-				<ListIcon as={MdCheckCircle} color="green.500" />
+				<ListIcon as={FaDotCircle} color="green.500" />
 				<Text>{date}</Text>
 			</HStack>
 			<VStack spacing={2} alignItems="flex-start">

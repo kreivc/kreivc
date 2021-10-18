@@ -172,14 +172,6 @@ export const ProjectList = [
 	},
 ];
 
-import {
-	SiNextdotjs,
-	SiTypescript,
-	SiChakraui,
-	SiNodedotjs,
-	SiVercel,
-} from "react-icons/si";
-
 export const FeaturedProjects = [
 	{
 		id: 1,
@@ -213,12 +205,11 @@ export const FeaturedProjects = [
 	},
 	{
 		id: 4,
-		title: "Blog Kreivc",
-		image: "kreivc/bnztj7is1v8m9b8utdcj",
+		title: "PT. RCI",
+		image: "kreivc/ncrycmagozunssabrpta",
 		description:
 			"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-		link: "https://blog-kreivc.web.app/",
-		rounded: "md",
+		link: "https://rcindonesia.co.id/",
 		finish: true,
 	},
 ];

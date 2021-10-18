@@ -3,6 +3,7 @@ import Hero from "../components/hero";
 import FavStack from "../components/FavStack";
 import Featured from "../components/Featured";
 import Timeline from "../components/timeline";
+import ContactMe from "../components/ContactMe";
 
 export default function Home() {
 	return (
@@ -12,6 +13,7 @@ export default function Home() {
 			<FavStack />
 			<Featured />
 			<Timeline />
+			<ContactMe />
 		</>
 	);
 }

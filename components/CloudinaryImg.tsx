@@ -1,9 +1,6 @@
 import Image from "next/image";
-// import Lightbox from "react-image-lightbox";
-// import "react-image-lightbox/style.css";
 import { buildUrl } from "cloudinary-build-url";
 import { Box } from "@chakra-ui/react";
-// import { useState } from "react";
 
 type CloudinaryImgProps = {
 	publicId: string;
@@ -18,7 +15,6 @@ const CloudinaryImg = ({
 	width,
 	rounded,
 }: CloudinaryImgProps) => {
-	// const [isOpen, setIsOpen] = useState(false);
 
 	const urlBlurred = buildUrl(publicId, {
 		cloud: {
@@ -38,8 +34,6 @@ const CloudinaryImg = ({
 		},
 	});
 
-	// const preview = true;
-
 	return (
 		<>
 			<Box
@@ -52,7 +46,6 @@ const CloudinaryImg = ({
 				bgSize="100%"
 				cursor="pointer"
 				rounded={rounded}
-				// onClick={preview ? () => setIsOpen(true) : undefined}
 			>
 				<Box pos="absolute" top={0} left={0}>
 					<Image
@@ -65,9 +58,6 @@ const CloudinaryImg = ({
 					/>
 				</Box>
 			</Box>
-			{/* {isOpen && (
-					<Lightbox mainSrc={url} onCloseRequest={() => setIsOpen(false)} />
-			)} */}
 		</>
 	);
 };

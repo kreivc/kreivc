@@ -12,6 +12,7 @@ import {
 	Text,
 	Textarea,
 	useBreakpointValue,
+	useColorModeValue,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { HiCheck } from "react-icons/hi";
@@ -43,12 +44,17 @@ const ContactMe = () => {
 
 	return (
 		<Box w="full">
-			<Heading size="lg">Contact Me 🤙</Heading>
+			<Heading size="lg" pb="3">
+				Contact Me 🤙
+			</Heading>
 			<Flex
 				direction={{ base: "column", md: "row" }}
 				p={{ base: "4", md: "7" }}
-				shadow="md"
 				rounded="md"
+				boxShadow={useColorModeValue(
+					"lg",
+					"rgba(252, 252, 252, 0.25) 0px 0px 5px 1px, rgba(255, 255, 255, 0.1) 0px 0px 1px 0px"
+				)}
 			>
 				<Box as="form" w="100%" onSubmit={sendEmail}>
 					<SimpleGrid columns={2} columnGap={3} rowGap={4} w="full">
@@ -94,7 +100,11 @@ const ContactMe = () => {
 							alignItems="center"
 							w="full"
 						>
-							<Text>Success</Text>
+							<Text>
+								{state === "success"
+									? "I‘ll reply you asap 😉"
+									: "Feel free to ask anything 🤙"}
+							</Text>
 							<Button
 								// colorScheme={state === "success" ? "green" : "blue"}
 								color="white"

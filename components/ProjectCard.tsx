@@ -9,6 +9,7 @@ import {
 	Button,
 	Badge,
 	useDisclosure,
+	useColorModeValue,
 } from "@chakra-ui/react";
 import { useRef } from "react";
 import CloudinaryImg from "./CloudinaryImg";
@@ -21,6 +22,7 @@ type ProjectCardProps = {
 	link: string;
 	rounded: string;
 	finish: boolean;
+	sc: string;
 };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -30,6 +32,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 	link,
 	rounded,
 	finish,
+	sc,
 }) => {
 	const width = 1920;
 	const height = 1080;
@@ -37,7 +40,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 	const btnRef = useRef();
 
 	return (
-		<LinkBox p="5" rounded="md" boxShadow="lg">
+		<LinkBox
+			p="5"
+			rounded="md"
+			boxShadow={useColorModeValue(
+				"lg",
+				"rgba(252, 252, 252, 0.25) 0px 0px 5px 1px, rgba(255, 255, 255, 0.1) 0px 0px 1px 0px"
+			)}
+		>
 			<VStack spacing={4} alignItems="flex-start">
 				<AspectRatio ratio={16 / 9} w="full">
 					<CloudinaryImg
@@ -80,6 +90,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 					link={link}
 					rounded={rounded}
 					finish={finish}
+					sc={sc}
 				/>
 			</VStack>
 		</LinkBox>

@@ -17,6 +17,7 @@ type pData = {
 	description: string;
 	link: string;
 	finish: boolean;
+	sc: string;
 };
 
 const Project = () => {
@@ -36,7 +37,7 @@ const Project = () => {
 					rowGap={8}
 				>
 					{ProjectList.map(
-						({ id, title, image, description, link, finish }: pData) => (
+						({ id, title, image, description, link, finish, sc }: pData) => (
 							<GridItem key={id} className="fadeinUp">
 								<ProjectCard
 									title={title}
@@ -45,6 +46,7 @@ const Project = () => {
 									link={link}
 									rounded={"md"}
 									finish={finish}
+									sc={sc}
 								/>
 							</GridItem>
 						)

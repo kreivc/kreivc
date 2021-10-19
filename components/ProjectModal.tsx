@@ -26,6 +26,7 @@ type ModalProps = {
 	link: string;
 	rounded: string;
 	finish: boolean;
+	sc: string;
 };
 
 const ProjectModal = ({
@@ -38,6 +39,7 @@ const ProjectModal = ({
 	link,
 	rounded,
 	finish,
+	sc,
 }: ModalProps) => {
 	const width = 3840;
 	const height = 2160;
@@ -72,12 +74,15 @@ const ProjectModal = ({
 							publicId={image}
 							height={height}
 							width={width}
-							rounded={"lg"}
+							rounded={rounded}
 						/>
-						<Text>{description}</Text>
+						<Text pt="3">{description}</Text>
 					</Box>
 				</ModalBody>
-				<ModalFooter w="full">
+				<ModalFooter w="full" d="flex" gridGap={4}>
+					<Button flexGrow={1} as="a" href={sc} target="_blank">
+						SourceCode
+					</Button>
 					<Button flexGrow={1} as="a" href={link} target="_blank">
 						Open
 					</Button>

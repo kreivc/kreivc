@@ -65,7 +65,7 @@ export const AllStack = [
 			{ name: "Node.js", color: "green" },
 			{ name: "Express", color: "facebook" },
 			{ name: "Prisma", color: "facebook" },
-			{ name: "MsSql", color: "telegram" },
+			{ name: "MSSql", color: "telegram" },
 			{ name: "MongoDB", color: "whatsapp" },
 			{ name: "MySql", color: "orange" },
 			{ name: "Postgres", color: "blue" },

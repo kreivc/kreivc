@@ -18,6 +18,7 @@ type pData = {
 	description: string;
 	link: string;
 	finish: boolean;
+	sc: string;
 };
 
 const Featured = () => {
@@ -32,7 +33,7 @@ const Featured = () => {
 				rowGap={8}
 			>
 				{FeaturedProjects.map(
-					({ id, title, image, description, link, finish }: pData) => (
+					({ id, title, image, description, link, finish, sc }: pData) => (
 						<GridItem key={id}>
 							<ProjectCard
 								title={title}
@@ -41,6 +42,7 @@ const Featured = () => {
 								link={link}
 								rounded={"md"}
 								finish={finish}
+								sc={sc}
 							/>
 						</GridItem>
 					)

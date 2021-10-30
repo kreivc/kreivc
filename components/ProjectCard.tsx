@@ -68,7 +68,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 							{finish ? "Finish" : "Ongoing"}
 						</Badge>
 					</LinkOverlay>
-					<Text fontSize="sm" color="gray.500" noOfLines={[1, 4]}>
+					<Text fontSize="sm" color="gray.500" noOfLines={[3, 4]}>
 						{description}
 					</Text>
 					<Flex w="full" gridGap={3}>

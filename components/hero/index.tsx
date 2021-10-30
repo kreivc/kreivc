@@ -64,8 +64,10 @@ const Hero = () => {
 					<Button
 						px={{ base: 3, md: 4 }}
 						justifyContent={{ base: "flex-start", md: "center" }}
-						// justifyContent="center"
 						rightIcon={<Icon as={FiArrowUpRight} />}
+						as="a"
+						href="/RickyCV.pdf"
+						target="_blank"
 					>
 						CV
 					</Button>

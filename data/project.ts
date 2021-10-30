@@ -1,7 +1,7 @@
 export const ProjectList = [
 	{
 		id: 1,
-		title: "My Portofolio",
+		title: "My Portfolio",
 		image: "kreivc/ileqfrephzqxsiv3cnba",
 		description:
 			"This website I created with the intention of serving as both a showcase and a portfolio. This application was also related to the binus internship program because it required a website, which I didn't have at the time. I built this website with Typescript, Next.js, Chakra-UI and will eventually integrate CMS for the blog section so that I can share my experience with you guys. I also hosted this website on vercel and purchased a domain (kreivc.com) on namecheap to make a more professional impression. In the future, I plan to finish the blog feature that will most likely use strapi, and I will keep this website up to date on a regular basis. Don't forget that I've included a contact section that is directly integrated with my personal email, so you can provide feedback or suggestions for the website's development.",

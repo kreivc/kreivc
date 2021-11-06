@@ -25,7 +25,7 @@ type ProjectCardProps = {
 	sc: string;
 };
 
-const ProjectCard: React.FC<ProjectCardProps> = ({
+const ProjectCard = ({
 	title,
 	image,
 	description,
@@ -33,7 +33,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 	rounded,
 	finish,
 	sc,
-}) => {
+}: ProjectCardProps) => {
 	const width = 1920;
 	const height = 1080;
 	const { isOpen, onOpen, onClose } = useDisclosure();

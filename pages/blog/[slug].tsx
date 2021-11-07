@@ -42,6 +42,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 	return {
 		paths: data.map((page: IPost) => ({ params: { slug: page.id } })),
 		fallback: false,
+		revalidate: 10,
 	};
 };
 

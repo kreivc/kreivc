@@ -2,8 +2,10 @@ import {
 	Heading,
 	LinkBox,
 	LinkOverlay,
+	Stack,
 	Text,
 	useColorModeValue,
+	VStack,
 } from "@chakra-ui/react";
 import CloudinaryImg from "./CloudinaryImg";
 
@@ -24,10 +26,14 @@ const BlogCard = ({ post }: { post: IPost }) => {
 					width={1920}
 					rounded={"md"}
 				/>
-				<LinkOverlay href={`/blog/${post.id}`}>
-					<Heading>{post.title}</Heading>
-					<Text>{post.content}</Text>
-				</LinkOverlay>
+				<Stack>
+					<LinkOverlay href={`/blog/${post.id}`} mt="3">
+						<Heading size="sm">{post.title}</Heading>
+					</LinkOverlay>
+					<Text fontSize="sm" color="gray.500" noOfLines={[3, 4]}>
+						{post.content}
+					</Text>
+				</Stack>
 			</LinkBox>
 		</>
 	);

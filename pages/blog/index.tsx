@@ -7,9 +7,9 @@ import {
 	VStack,
 } from "@chakra-ui/react";
 import { GetStaticProps } from "next";
-import Seo from "../components/Seo";
+import Seo from "../../components/Seo";
 import axios from "axios";
-import BlogCard from "../components/BlogCard";
+import BlogCard from "../../components/BlogCard";
 
 const Blog = ({ data }: { data: IPost[] }) => {
 	return (

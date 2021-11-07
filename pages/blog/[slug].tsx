@@ -1,28 +1,32 @@
 import { Box, Heading } from "@chakra-ui/react";
 import axios from "axios";
-import marked from "marked";
 import { GetStaticPaths, GetStaticProps } from "next";
 import CloudinaryImg from "../../components/CloudinaryImg";
 import Seo from "../../components/Seo";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
+import Mdx from "../../components/Mdx";
 
-const BlogPost = ({ data }: { data: IPost }) => {
-	const getMarkdownText = () => {
-		const rawMarkup = marked(data.content, { sanitize: true });
-		return { __html: rawMarkup };
-	};
+type Props = {
+	title: string;
+	cover: IImage;
+	blog: MDXRemoteSerializeResult;
+};
+
+const BlogPost = ({ title, cover, blog }: Props) => {
 	return (
 		<>
-			<Seo title={data.title} />
+			<Seo title={title} />
 			<Box w="full" alignItems="flex-start" spacing={4}>
 				<CloudinaryImg
-					publicId={data.cover.provider_metadata.public_id}
+					publicId={cover.provider_metadata.public_id}
 					height={1080}
 					width={1920}
 					rounded={"md"}
 				/>
-				<Heading>{data.title}</Heading>
+				<Heading>{title}</Heading>
 				<Box>
-					<Box dangerouslySetInnerHTML={getMarkdownText()}></Box>
+					<MDXRemote {...blog} components={Mdx} />
 				</Box>
 			</Box>
 		</>
@@ -42,12 +46,17 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
-	const { data } = await axios.get(
-		`https://kreivc-blog-api.herokuapp.com/posts/${slug}`
-	);
+	const {
+		data: { title, cover, content },
+	} = await axios.get(`https://kreivc-blog-api.herokuapp.com/posts/${slug}`);
+
+	const blog = await serialize(content);
+
 	return {
 		props: {
-			data,
+			title,
+			cover,
+			blog,
 		},
 		revalidate: 10,
 	};

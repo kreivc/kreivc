@@ -11,11 +11,13 @@ import {
 	SimpleGrid,
 	Text,
 	Textarea,
+	useToast,
 	useBreakpointValue,
 	useColorModeValue,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { HiCheck } from "react-icons/hi";
+import { validate } from "../utils/Validate";
 
 const ContactMe = () => {
 	const [name, setName] = useState("");
@@ -25,11 +27,22 @@ const ContactMe = () => {
 		"initial"
 	);
 	const colSpan = useBreakpointValue({ base: 2, md: 1 });
+	const toast = useToast();
 
 	const sendEmail = (e: React.FormEvent<EventTarget>) => {
 		e.preventDefault();
-		setState("submitting");
+		const validateRes = validate(name, email, message);
+		if (validateRes.status === "error") {
+			return toast({
+				title: validateRes.title,
+				description: validateRes.description,
+				status: validateRes.status,
+				duration: validateRes.duration,
+				isClosable: validateRes.isClosable,
+			});
+		}
 
+		setState("submitting");
 		setTimeout(() => {
 			emailjs.send(
 				process.env.NEXT_PUBLIC_EMAIL_SERVICE,

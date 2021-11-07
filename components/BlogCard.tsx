@@ -8,6 +8,7 @@ import {
 	VStack,
 } from "@chakra-ui/react";
 import CloudinaryImg from "./CloudinaryImg";
+import Link from "next/link";
 
 const BlogCard = ({ post }: { post: IPost }) => {
 	return (
@@ -27,9 +28,11 @@ const BlogCard = ({ post }: { post: IPost }) => {
 					rounded={"md"}
 				/>
 				<Stack>
-					<LinkOverlay href={`/blog/${post.id}`} mt="3">
-						<Heading size="sm">{post.title}</Heading>
-					</LinkOverlay>
+					<Link href={`/blog/${post.id}`} passHref>
+						<LinkOverlay mt="3">
+							<Heading size="sm">{post.title}</Heading>
+						</LinkOverlay>
+					</Link>
 					<Text fontSize="sm" color="gray.500" noOfLines={[3, 4]}>
 						{post.content}
 					</Text>

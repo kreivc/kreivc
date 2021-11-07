@@ -1,4 +1,12 @@
-import { Box, Heading } from "@chakra-ui/react";
+import {
+	AspectRatio,
+	Box,
+	Divider,
+	Flex,
+	Heading,
+	Text,
+	VStack,
+} from "@chakra-ui/react";
 import axios from "axios";
 import { GetStaticPaths, GetStaticProps } from "next";
 import CloudinaryImg from "../../components/CloudinaryImg";
@@ -11,20 +19,29 @@ type Props = {
 	title: string;
 	cover: IImage;
 	blog: MDXRemoteSerializeResult;
+	createdAt: Date;
 };
 
-const BlogPost = ({ title, cover, blog }: Props) => {
+const BlogPost = ({ title, cover, blog, createdAt }: Props) => {
 	return (
 		<>
 			<Seo title={title} />
 			<Box w="full" alignItems="flex-start" spacing={4}>
-				<CloudinaryImg
-					publicId={cover.provider_metadata.public_id}
-					height={1080}
-					width={1920}
-					rounded={"md"}
-				/>
-				<Heading>{title}</Heading>
+				<Box d="grid" gridRowGap={5}>
+					<AspectRatio ratio={16 / 9} w="full">
+						<CloudinaryImg
+							publicId={cover.provider_metadata.public_id}
+							height={1080}
+							width={1920}
+							rounded={"md"}
+						/>
+					</AspectRatio>
+					<Flex justifyContent="space-between" alignItems="center">
+						<Heading>{title}</Heading>
+						<Text>{new Date(createdAt).toUTCString().substring(0, 16)}</Text>
+					</Flex>
+					<Divider />
+				</Box>
 				<Box>
 					<MDXRemote {...blog} components={Mdx} />
 				</Box>
@@ -40,14 +57,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
 		"https://kreivc-blog-api.herokuapp.com/posts/"
 	);
 	return {
-		paths: data.map((page: IPost) => ({ params: { slug: page.id } })),
+		paths: data.map((page: IPost) => ({ params: { slug: page.slug } })),
 		fallback: "blocking",
 	};
 };
 
 export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
 	const {
-		data: { title, cover, content },
+		data: { title, cover, content, createdAt },
 	} = await axios.get(`https://kreivc-blog-api.herokuapp.com/posts/${slug}`);
 
 	const blog = await serialize(content);
@@ -57,6 +74,7 @@ export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
 			title,
 			cover,
 			blog,
+			createdAt,
 		},
 		revalidate: 10,
 	};

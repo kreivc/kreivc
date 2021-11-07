@@ -2,14 +2,28 @@ import {
 	Alert,
 	Box,
 	chakra,
-	HTMLChakraProps,
+	Code,
+	Divider,
+	Heading,
 	Kbd,
+	Link,
+	ListItem,
+	OrderedList,
 	Text,
+	UnorderedList,
 	useColorModeValue,
 } from "@chakra-ui/react";
+import NextLink from "next/link";
 
 const Pre = (props: any) => (
-	<chakra.div my="2em" borderRadius="sm" {...props} />
+	<Code
+		display="block"
+		whiteSpace="pre"
+		my="2em"
+		p="3"
+		borderRadius="sm"
+		{...props}
+	/>
 );
 
 const Table = (props: any) => (
@@ -40,33 +54,50 @@ const TData = (props: any) => (
 );
 
 const InlineCode = (props: any) => (
-	<chakra.code
-		apply="mdx.code"
-		color={useColorModeValue("blue.500", "blue.200")}
-		{...props}
-	/>
+	<Code color={useColorModeValue("blue.500", "blue.200")} {...props} />
 );
 
-const LinkedHeading = (props: HTMLChakraProps<"h2">) => {
+const CustomLink = (props: any) => {
+	const href = props.href;
+	const isInternalLink = href && (href.startsWith("/") || href.startsWith("#"));
+
+	if (isInternalLink) {
+		return (
+			<NextLink href={href} passHref>
+				<Link color={"blue.500"} {...props} />
+			</NextLink>
+		);
+	}
+
+	return <Link color={"blue.500"} isExternal {...props} />;
+};
+
+const Quote = (props: any) => {
 	return (
-		<Text>
-			<Box
-				{...props}
-				fontFamily="heading"
-				color={useColorModeValue("gray.700", "white")}
-			>
-				{props.children}
-			</Box>
-		</Text>
+		<Alert
+			my={4}
+			w="98%"
+			variant="left-accent"
+			status="info"
+			rounded="sm"
+			css={{
+				"> *:first-of-type": {
+					marginTop: 0,
+					marginLeft: 8,
+				},
+			}}
+			{...props}
+		/>
 	);
 };
 
 const Mdx = {
-	h1: (props: any) => <LinkedHeading as="h1" apply="mdx.h1" {...props} />,
-	h2: (props: any) => <LinkedHeading as="h2" apply="mdx.h2" {...props} />,
-	h3: (props: any) => <LinkedHeading as="h3" apply="mdx.h3" {...props} />,
-	h4: (props: any) => <LinkedHeading as="h4" apply="mdx.h4" {...props} />,
-	hr: (props: any) => <chakra.hr apply="mdx.hr" {...props} />,
+	h1: (props: any) => <Heading as="h1" size="2xl" my={5} {...props} />,
+	h2: (props: any) => <Heading as="h2" size="xl" my={5} {...props} />,
+	h3: (props: any) => <Heading as="h3" size="md" my={5} {...props} />,
+	h4: (props: any) => <Heading as="h4" size="sm" my={5} {...props} />,
+	h5: (props: any) => <Heading as="h5" size="xs" my={5} {...props} />,
+	hr: (props: any) => <Divider {...props} />,
 	inlineCode: InlineCode,
 	strong: (props: any) => <Box as="strong" fontWeight="semibold" {...props} />,
 	pre: Pre,
@@ -81,25 +112,12 @@ const Mdx = {
 	table: Table,
 	th: THead,
 	td: TData,
-	a: (props: any) => <chakra.a apply="mdx.a" {...props} />,
-	p: (props: any) => <chakra.p apply="mdx.p" {...props} />,
-	ul: (props: any) => <chakra.ul apply="mdx.ul" {...props} />,
-	ol: (props: any) => <chakra.ol apply="mdx.ul" {...props} />,
-	li: (props: any) => <chakra.li pb="4px" {...props} />,
-	blockquote: (props: any) => (
-		<Box>
-			<Alert
-				role="none"
-				status="warning"
-				variant="left-accent"
-				as="blockquote"
-				rounded="4px"
-				{...props}
-				mx={-4}
-				w="unset"
-			/>
-		</Box>
-	),
+	a: (props: any) => <CustomLink {...props} />,
+	p: (props: any) => <Text {...props} />,
+	ul: (props: any) => <UnorderedList {...props} />,
+	ol: (props: any) => <OrderedList {...props} />,
+	li: (props: any) => <ListItem pb="4px" {...props} />,
+	blockquote: (props: any) => <Quote {...props} />,
 };
 
 export default Mdx;

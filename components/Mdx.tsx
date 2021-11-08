@@ -22,6 +22,7 @@ const Pre = (props: any) => (
 		my="2em"
 		p="3"
 		borderRadius="sm"
+		overflowX="auto"
 		{...props}
 	/>
 );

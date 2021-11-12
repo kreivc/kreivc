@@ -66,7 +66,7 @@ const Hero = () => {
 						justifyContent={{ base: "flex-start", md: "center" }}
 						rightIcon={<Icon as={FiArrowUpRight} />}
 						as="a"
-						href="/RickyCV.pdf"
+						href="/Ricky.pdf"
 						target="_blank"
 					>
 						CV

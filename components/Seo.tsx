@@ -19,8 +19,6 @@ const Seo = ({ title }: SeoProps) => {
 		<Head>
 			<meta charSet="utf-8" />
 			<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-			{/* <!-- Primary Meta Tags --> */}
 			<title>{title}</title>
 			<meta name="title" content="Kreivc" />
 			<meta
@@ -28,7 +26,6 @@ const Seo = ({ title }: SeoProps) => {
 				content="Hi, I’m Ricky. I‘m a fast learner and hardworking CS Student at Bina Nusantara University. I‘m currently really interested in Frontend, Backend also Fullstack Development. Reach me out to talk more about how it works!"
 			/>
 
-			{/* <!-- Open Graph / Facebook --> */}
 			<meta property="og:type" content="website" />
 			<meta property="og:url" content="https://www.kreivc.com/" />
 			<meta property="og:title" content="Kreivc" />
@@ -38,7 +35,6 @@ const Seo = ({ title }: SeoProps) => {
 			/>
 			<meta property="og:image" content="https://i.ibb.co/D1CzVpZ/logo.jpg" />
 
-			{/* <!-- Twitter --> */}
 			<meta property="twitter:card" content="summary_large_image" />
 			<meta property="twitter:url" content="https://www.kreivc.com/" />
 			<meta property="twitter:title" content="Kreivc" />
@@ -50,8 +46,6 @@ const Seo = ({ title }: SeoProps) => {
 				property="twitter:image"
 				content="https://i.ibb.co/D1CzVpZ/logo.jpg"
 			/>
-
-			{/* --- favicon --- */}
 
 			<link
 				rel="apple-touch-icon"

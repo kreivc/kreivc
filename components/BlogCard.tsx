@@ -6,10 +6,10 @@ import {
 	Stack,
 	Text,
 	useColorModeValue,
-	VStack,
 } from "@chakra-ui/react";
 import CloudinaryImg from "./CloudinaryImg";
 import Link from "next/link";
+import RemoveMarkdown from "remove-markdown";
 
 const BlogCard = ({ post }: { post: IPost }) => {
 	return (
@@ -37,7 +37,7 @@ const BlogCard = ({ post }: { post: IPost }) => {
 						</LinkOverlay>
 					</Link>
 					<Text fontSize="sm" color="gray.500" noOfLines={[3, 4]}>
-						{post.content}
+						{RemoveMarkdown(post.content)}
 					</Text>
 				</Stack>
 			</LinkBox>

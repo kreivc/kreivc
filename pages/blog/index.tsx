@@ -15,7 +15,6 @@ const Blog = ({ data }: { data: IPost[] }) => {
 	return (
 		<>
 			<Seo title="Blog" />
-			{/* <Heading className="fadeinDownInfinite">Comming Soon</Heading> */}
 			<VStack w="full" alignItems="flex-start" spacing={4}>
 				<Box className="fadeinUp">
 					<Heading>Blog</Heading>
@@ -35,6 +34,7 @@ const Blog = ({ data }: { data: IPost[] }) => {
 					))}
 				</SimpleGrid>
 			</VStack>
+			<Heading className="fadeinDownInfinite">Comming Soon</Heading>
 		</>
 	);
 };

@@ -18,7 +18,7 @@ export const MyTimeline = [
 		title: "Bina Nusantara University",
 		description:
 			"I learned a lot at Binus, beginning with the first year program, making friends, organizing between students, and working on joint projects. I also like the Binus neighborhood because there are many food vendors there.",
-		date: "2019 - present",
+		date: "2019 - 2023",
 	},
 	{
 		id: 4,
@@ -29,9 +29,9 @@ export const MyTimeline = [
 	},
 	{
 		id: 5,
-		title: "To be continued..",
+		title: "Verihubs",
 		description:
-			"After all of this, I applied the 1 day 1 new knowledge principle, which led me to create many projects in order to increase my knowledge every day, and I eventually got freelance work as a frontend developer in some cryptocurrency projects. Now that I am in semester 5 and will be in semester 6, Bina Nusantara University has an internship program on semester 6 that requires me to apply to a company to do an internship. I am very open to discussing internships so if you are interested reach me out to talk more about how it works!",
-		date: "",
+			"Extremely happy and grateful to say that I have accepted an Internship from VERIHUBS (YC S21) as Software Engineer Intern. I hope that over the next year I can evolve as a better engineer and contribute to the advancement of technology with VERIHUBS (YC S21)",
+		date: "2022 - present",
 	},
 ];

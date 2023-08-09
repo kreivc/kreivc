@@ -15,7 +15,7 @@ export const ProjectList = [
 		image: "kreivc/fcwjdgdqikuielrfdizp",
 		description:
 			"$MuskTweetElon is my sixth cryptocurrency freelance project, and I'm still working with the same client, who asked me to design a website with a cute theme, similar to that of a baby doge. This project was created using Next.js and Chakra-UI, and all that remains is for the client to approve or revise it.",
-		link: "https://musktweetfloki.dog/",
+		link: "https://musk-tweet-floki.vercel.app/",
 		finish: false,
 		sc: "https://github.com/kreivc/MuskTweetFloki",
 	},
@@ -65,7 +65,7 @@ export const ProjectList = [
 		image: "kreivc/dhmajtkrmculkdz3zbn9",
 		description:
 			"$AdaConda is my fourth cryptocurrency freelance project for the same client. The client asked me to design a new layout with a dark color scheme, and I considered experimenting with Chakra-UI and Tailwind CSS. After completing the project, I was able to conclude that the combination of Chakra-UI and Tailwind CSS was inefficient and reduced performance.",
-		link: "https://adaconda.co/",
+		link: "https://adaconda-kreivc.vercel.app/",
 		finish: true,
 		sc: "https://github.com/kreivc/adaconda",
 	},
@@ -95,7 +95,7 @@ export const ProjectList = [
 		image: "kreivc/fah56zotittsgch3cqy5",
 		description:
 			"As you are aware, I labeled my cryptocurrency project with the prefix '$' and this is my third cryptocurrency freelance project. This time, the clients want a new design with bright colors for their project. In addition to practicing my tailwind skills, I created this project with Tailwind CSS and additional animation from the AOS library that creates objects when scrolling issues animations. To make the hero's part more interesting, I also added particles.js.",
-		link: "https://www.adasaurus.co/",
+		link: "https://adasaurus-kreivc.vercel.app/",
 		finish: true,
 		sc: "https://github.com/kreivc/Adasaurus",
 	},
@@ -115,7 +115,7 @@ export const ProjectList = [
 		image: "kreivc/deendslhwub9xwigjhwx",
 		description:
 			"$AdaZeus is my second freelance project with the same client, following $PEE. The client requested a website with the same design as before, but with a different color scheme. I also made it, and because it's a cryptocurrency project, I learned and added Web3 integration so that users can click a button and the address of crypto on the website will be automatically entered into the user's metamask wallet. So that cryptocurrency users will be more interested in the website and it will be easier for users to directly add $AdaZeus addresse to their respective wallets.",
-		link: "http://adazeus.com/",
+		link: "https://adazeus.netlify.app/",
 		finish: true,
 		sc: "https://github.com/kreivc/adazeus",
 	},
@@ -135,7 +135,7 @@ export const ProjectList = [
 		image: "kreivc/vbk3pnwfaq31z2uqbgbo",
 		description:
 			"$PEE stands for PunkEtherEarn, which is my first freelance project in the cryptocurrency field. Starting with a friend who started a cryptocurrency project with a friend in Belgium, who eventually asked me to work as a freelance frontend developer for his cryptocurrency project with a cryptocurrency payment system. The freelance system offered is quite different, they want to see the website first, then revise it until the deal is finalized, and then the domain is purchased, after which I was paid in cryptocurrency.",
-		link: "https://www.pee.digital/",
+		link: "https://tokenkreivc.netlify.app/",
 		finish: true,
 		sc: "https://github.com/kreivc/pee.digital",
 	},

@@ -30,7 +30,7 @@ const Layout = ({ children }: Props) => {
 				</Box>
 				<Footer />
 			</VStack>
-			<ToTop />
+			{/* <ToTop /> */}
 		</Container>
 	);
 };

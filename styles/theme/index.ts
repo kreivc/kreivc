@@ -3,10 +3,16 @@ import {
 	theme as base,
 	HeadingProps,
 	TextProps,
+	ThemeConfig,
 } from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
 
-const theme = extendTheme({
+export const config: ThemeConfig = {
+	initialColorMode: "dark",
+	useSystemColorMode: false,
+};
+
+export const theme = extendTheme({
 	sizes: {
 		18: "4.5rem",
 	},
@@ -30,5 +36,3 @@ const theme = extendTheme({
 		body: `Inter, ${base.fonts.body}`,
 	},
 });
-
-export default theme;
